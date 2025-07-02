@@ -1,0 +1,4 @@
+baseURL: https://example.org/
+languageCode: en-us
+title: Mili's Site
+theme: "PaperMod"
