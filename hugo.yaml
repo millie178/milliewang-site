@@ -2,3 +2,20 @@ baseURL: https://example.org/
 languageCode: en-us
 title: Mili's Site
 theme: "PaperMod"
+mainSections: []
+
+params:
+  homeInfoParams:
+    Title: "Hi, I'm Millie Wang 👋"
+    Content: |
+      Welcome to my personal site!
+
+      🎓 B.A. in Computer Science & Religion  
+      💡 Interested in data, tech, and human meaning  
+      📁 Explore my [Projects](/projects/) and [Resume](/resume/)
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/millie178"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/shulei-wang/"
