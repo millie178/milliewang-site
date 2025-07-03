@@ -4,10 +4,34 @@ title: Mili's Site
 theme: "PaperMod"
 mainSections: []
 
+menu:
+  main:
+    - name: About
+      url: /about/
+      weight: 1
+    - name: Posts
+      url: /post/
+      weight: 2
+    - name: Resume
+      url: /resume/
+      weight: 3
+    - name: Projects
+      url: /projects/
+      weight: 4
+
+
 params:
   homeInfoParams:
     Title: "Hi, I'm Millie Wang 👋"
     Content: |
+      <img src="/avatar.png" alt="Millie Avatar" 
+      style="border-radius: 50%; 
+      width: 100px; 
+      height: 100px; 
+      display: block; 
+      float: left;
+      margin: 0 auto 1rem auto;" />
+
       Welcome to my personal site!
 
       🎓 B.A. in Computer Science & Religion  
@@ -19,3 +43,9 @@ params:
       url: "https://github.com/millie178"
     - name: linkedin
       url: "https://www.linkedin.com/in/shulei-wang/"
+
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

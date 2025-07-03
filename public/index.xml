@@ -6,6 +6,63 @@
     <description>Recent content on Mili&#39;s Site</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
+    <lastBuildDate>Wed, 02 Jul 2025 19:33:41 -0500</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Post</title>
+      <link>http://localhost:1313/post/</link>
+      <pubDate>Wed, 02 Jul 2025 19:33:41 -0500</pubDate>
+      <guid>http://localhost:1313/post/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Project</title>
+      <link>http://localhost:1313/project/</link>
+      <pubDate>Wed, 02 Jul 2025 19:32:39 -0500</pubDate>
+      <guid>http://localhost:1313/project/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>About</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Millie Wang&lt;/strong&gt; 👋&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m a recent graduate with a B.A. in &lt;strong&gt;Computer Science&lt;/strong&gt; and &lt;strong&gt;Religion&lt;/strong&gt; from Luther College.&lt;br&gt;
+I’m passionate about the intersection of technology, language, and human meaning.&lt;/p&gt;
+&lt;h3 id=&#34;-interests&#34;&gt;✨ Interests&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Data analysis and visualization&lt;/li&gt;
+&lt;li&gt;Human-centered computing&lt;/li&gt;
+&lt;li&gt;Ethics and spirituality in tech&lt;/li&gt;
+&lt;li&gt;Creative coding projects&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-currently&#34;&gt;🌱 Currently&lt;/h3&gt;
+&lt;p&gt;Looking for entry-level opportunities where I can contribute my skills in data, code, and communication — especially in fields like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Higher education&lt;/li&gt;
+&lt;li&gt;Nonprofits&lt;/li&gt;
+&lt;li&gt;Research&lt;/li&gt;
+&lt;li&gt;Healthcare&lt;/li&gt;
+&lt;li&gt;Asia-connected companies&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-contact&#34;&gt;📫 Contact&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/millie178&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/shulei-wang/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Email: &lt;a href=&#34;mailto:shuleiwangluther@gmail.com&#34;&gt;shuleiwangluther@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;iframe src=&#34;http://localhost:1313/Shulei_Wang_Resume.pdf&#34;
+        width=&#34;100%&#34;
+        height=&#34;800px&#34;
+        style=&#34;border: none;&#34;&gt;
+&lt;/iframe&gt;</description>
+    </item>
   </channel>
 </rss>
