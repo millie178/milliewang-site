@@ -16,7 +16,7 @@ menu:
       url: /resume/
       weight: 3
     - name: Projects
-      url: /project/
+      url: /projects/
       weight: 4
 
 

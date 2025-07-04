@@ -16,11 +16,11 @@
       <description></description>
     </item>
     <item>
-      <title>Project</title>
-      <link>http://localhost:1313/project/</link>
-      <pubDate>Wed, 02 Jul 2025 19:32:39 -0500</pubDate>
-      <guid>http://localhost:1313/project/</guid>
-      <description></description>
+      <title>E-commerce Sales Dashboard</title>
+      <link>http://localhost:1313/projects/ecommerce-dashboard/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/ecommerce-dashboard/</guid>
+      <description>An interactive sales dashboard built in Tableau using Superstore data, with supporting analysis.</description>
     </item>
     <item>
       <title>About</title>
@@ -52,6 +52,13 @@ I’m passionate about the intersection of technology, language, and human meani
 &lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/shulei-wang/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Email: &lt;a href=&#34;mailto:shuleiwangluther@gmail.com&#34;&gt;shuleiwangluther@gmail.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>HR Attrition Analysis</title>
+      <link>http://localhost:1313/projects/hr-attrition-analysis/</link>
+      <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/hr-attrition-analysis/</guid>
+      <description>Analysis of employee attrition using Python and logistic regression.</description>
     </item>
     <item>
       <title>Resume</title>

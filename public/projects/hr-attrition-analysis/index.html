@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>HR Attrition Analysis | Mili&#39;s Site</title>
+<meta name="keywords" content="Python, Pandas, Jupyter, Logistic Regression">
+<meta name="description" content="Analysis of employee attrition using Python and logistic regression.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/projects/hr-attrition-analysis/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8fe10233a706bc87f2e08b3cf97b8bd4c0a80f10675a143675d59212121037c0.css" integrity="sha256-j&#43;ECM6cGvIfy4Is8&#43;XuL1MCoDxBnWhQ2ddWSEhIQN8A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/projects/hr-attrition-analysis/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Mili&#39;s Site (Alt + H)">Mili&#39;s Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/post/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      HR Attrition Analysis
+    </h1>
+    <div class="post-meta"><span title='2025-07-02 00:00:00 +0000 UTC'>July 2, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="exploratory-data-analysis-eda">Exploratory Data Analysis (EDA)<a hidden class="anchor" aria-hidden="true" href="#exploratory-data-analysis-eda">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;../data/HR-Employee-Attrition.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick preview</span>
+</span></span><span style="display:flex;"><span>print(df<span style="color:#f92672">.</span>head())
+</span></span><span style="display:flex;"><span>print(df<span style="color:#f92672">.</span>info())
+</span></span><span style="display:flex;"><span>print(df[<span style="color:#e6db74">&#39;Attrition&#39;</span>]<span style="color:#f92672">.</span>value_counts(normalize<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>))
+</span></span></code></pre></div><pre><code>   Age Attrition     BusinessTravel  DailyRate              Department  \
+0   41       Yes      Travel_Rarely       1102                   Sales
+1   49        No  Travel_Frequently        279  Research &amp; Development
+2   37       Yes      Travel_Rarely       1373  Research &amp; Development
+3   33        No  Travel_Frequently       1392  Research &amp; Development
+4   27        No      Travel_Rarely        591  Research &amp; Development
+
+   DistanceFromHome  Education EducationField  EmployeeCount  EmployeeNumber  \
+0                 1          2  Life Sciences              1               1
+1                 8          1  Life Sciences              1               2
+2                 2          2          Other              1               4
+3                 3          4  Life Sciences              1               5
+4                 2          1        Medical              1               7
+
+   ...  RelationshipSatisfaction StandardHours  StockOptionLevel  \
+0  ...                         1            80                 0
+1  ...                         4            80                 1
+2  ...                         2            80                 0
+3  ...                         3            80                 0
+4  ...                         4            80                 1
+
+   TotalWorkingYears  TrainingTimesLastYear WorkLifeBalance  YearsAtCompany  \
+0                  8                      0               1               6
+1                 10                      3               3              10
+2                  7                      3               3               0
+3                  8                      3               3               8
+4                  6                      3               3               2
+
+  YearsInCurrentRole  YearsSinceLastPromotion  YearsWithCurrManager
+0                  4                        0                     5
+1                  7                        1                     7
+2                  0                        0                     0
+3                  7                        3                     0
+4                  2                        2                     2
+
+[5 rows x 35 columns]
+&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 1470 entries, 0 to 1469
+Data columns (total 35 columns):
+ #   Column                    Non-Null Count  Dtype
+---  ------                    --------------  -----
+ 0   Age                       1470 non-null   int64
+ 1   Attrition                 1470 non-null   object
+ 2   BusinessTravel            1470 non-null   object
+ 3   DailyRate                 1470 non-null   int64
+ 4   Department                1470 non-null   object
+ 5   DistanceFromHome          1470 non-null   int64
+ 6   Education                 1470 non-null   int64
+ 7   EducationField            1470 non-null   object
+ 8   EmployeeCount             1470 non-null   int64
+ 9   EmployeeNumber            1470 non-null   int64
+ 10  EnvironmentSatisfaction   1470 non-null   int64
+ 11  Gender                    1470 non-null   object
+ 12  HourlyRate                1470 non-null   int64
+ 13  JobInvolvement            1470 non-null   int64
+ 14  JobLevel                  1470 non-null   int64
+ 15  JobRole                   1470 non-null   object
+ 16  JobSatisfaction           1470 non-null   int64
+ 17  MaritalStatus             1470 non-null   object
+ 18  MonthlyIncome             1470 non-null   int64
+ 19  MonthlyRate               1470 non-null   int64
+ 20  NumCompaniesWorked        1470 non-null   int64
+ 21  Over18                    1470 non-null   object
+ 22  OverTime                  1470 non-null   object
+ 23  PercentSalaryHike         1470 non-null   int64
+ 24  PerformanceRating         1470 non-null   int64
+ 25  RelationshipSatisfaction  1470 non-null   int64
+ 26  StandardHours             1470 non-null   int64
+ 27  StockOptionLevel          1470 non-null   int64
+ 28  TotalWorkingYears         1470 non-null   int64
+ 29  TrainingTimesLastYear     1470 non-null   int64
+ 30  WorkLifeBalance           1470 non-null   int64
+ 31  YearsAtCompany            1470 non-null   int64
+ 32  YearsInCurrentRole        1470 non-null   int64
+ 33  YearsSinceLastPromotion   1470 non-null   int64
+ 34  YearsWithCurrManager      1470 non-null   int64
+dtypes: int64(26), object(9)
+memory usage: 402.1+ KB
+None
+Attrition
+No     0.838776
+Yes    0.161224
+Name: proportion, dtype: float64
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Visualization</span>
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>countplot(data<span style="color:#f92672">=</span>df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Attrition&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Employee Attrition Count&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_1.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>countplot(data<span style="color:#f92672">=</span>df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Department&#39;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Attrition&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Set2&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Attrition by Department&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">30</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_2.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">5</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>countplot(data<span style="color:#f92672">=</span>df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;JobRole&#39;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Attrition&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Set3&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Attrition by Job Role&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xticks(rotation<span style="color:#f92672">=</span><span style="color:#ae81ff">45</span>, ha<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;right&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_3.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>countplot(data<span style="color:#f92672">=</span>df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;JobSatisfaction&#39;</span>, hue<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Attrition&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coolwarm&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Attrition by Job Satisfaction Level&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Job Satisfaction (1=Low, 4=High)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_4.png"></p>
+<h2 id="feature-selection--preprocessing">Feature Selection &amp; Preprocessing<a hidden class="anchor" aria-hidden="true" href="#feature-selection--preprocessing">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">%</span>pip install scikit<span style="color:#f92672">-</span>learn
+</span></span></code></pre></div><pre><code>Requirement already satisfied: scikit-learn in /Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages (1.7.0)
+Requirement already satisfied: scipy&gt;=1.8.0 in /Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages (from scikit-learn) (1.10.1)
+Requirement already satisfied: numpy&gt;=1.22.0 in /Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages (from scikit-learn) (1.24.2)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages (from scikit-learn) (3.6.0)
+Requirement already satisfied: joblib&gt;=1.2.0 in /Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages (from scikit-learn) (1.5.1)
+Note: you may need to restart the kernel to use updated packages.
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.preprocessing <span style="color:#f92672">import</span> LabelEncoder
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df_model <span style="color:#f92672">=</span> df[[<span style="color:#e6db74">&#39;Attrition&#39;</span>, <span style="color:#e6db74">&#39;Department&#39;</span>, <span style="color:#e6db74">&#39;JobRole&#39;</span>, <span style="color:#e6db74">&#39;JobSatisfaction&#39;</span>, <span style="color:#e6db74">&#39;MonthlyIncome&#39;</span>, <span style="color:#e6db74">&#39;OverTime&#39;</span>, <span style="color:#e6db74">&#39;BusinessTravel&#39;</span>, <span style="color:#e6db74">&#39;Age&#39;</span>, <span style="color:#e6db74">&#39;DistanceFromHome&#39;</span>, <span style="color:#e6db74">&#39;YearsAtCompany&#39;</span>, <span style="color:#e6db74">&#39;TotalWorkingYears&#39;</span>, <span style="color:#e6db74">&#39;TrainingTimesLastYear&#39;</span>, <span style="color:#e6db74">&#39;WorkLifeBalance&#39;</span>, <span style="color:#e6db74">&#39;EnvironmentSatisfaction&#39;</span>, <span style="color:#e6db74">&#39;RelationshipSatisfaction&#39;</span>, <span style="color:#e6db74">&#39;PerformanceRating&#39;</span>]]
+</span></span><span style="display:flex;"><span>df_model <span style="color:#f92672">=</span> df_model<span style="color:#f92672">.</span>dropna()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>le <span style="color:#f92672">=</span> LabelEncoder()
+</span></span><span style="display:flex;"><span>df_model[<span style="color:#e6db74">&#39;Attrition&#39;</span>] <span style="color:#f92672">=</span> le<span style="color:#f92672">.</span>fit_transform(df_model[<span style="color:#e6db74">&#39;Attrition&#39;</span>])  <span style="color:#75715e"># Yes = 1, No = 0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># One-hot encode categorical variables</span>
+</span></span><span style="display:flex;"><span>df_model <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>get_dummies(df_model, drop_first<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span></code></pre></div><h2 id="logistic-regression-modeling">Logistic Regression Modeling<a hidden class="anchor" aria-hidden="true" href="#logistic-regression-modeling">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.model_selection <span style="color:#f92672">import</span> train_test_split
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.linear_model <span style="color:#f92672">import</span> LogisticRegression
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> classification_report, confusion_matrix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X <span style="color:#f92672">=</span> df_model<span style="color:#f92672">.</span>drop(<span style="color:#e6db74">&#39;Attrition&#39;</span>, axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#f92672">=</span> df_model[<span style="color:#e6db74">&#39;Attrition&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_train, X_test, y_train, y_test <span style="color:#f92672">=</span> train_test_split(X, y, test_size<span style="color:#f92672">=</span><span style="color:#ae81ff">0.2</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> LogisticRegression(max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>model <span style="color:#f92672">=</span> LogisticRegression(class_weight<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;balanced&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>y_pred <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>predict(X_test)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(confusion_matrix(y_test, y_pred))
+</span></span><span style="display:flex;"><span>print(classification_report(y_test, y_pred))
+</span></span></code></pre></div><pre><code>[[171  84]
+ [ 12  27]]
+              precision    recall  f1-score   support
+
+           0       0.93      0.67      0.78       255
+           1       0.24      0.69      0.36        39
+
+    accuracy                           0.67       294
+   macro avg       0.59      0.68      0.57       294
+weighted avg       0.84      0.67      0.72       294
+
+
+
+/Users/millie/opt/anaconda3/envs/tensorflow/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py:470: ConvergenceWarning: lbfgs failed to converge after 100 iteration(s) (status=1):
+STOP: TOTAL NO. of ITERATIONS REACHED LIMIT
+
+Increase the number of iterations to improve the convergence (max_iter=100).
+You might also want to scale the data as shown in:
+    https://scikit-learn.org/stable/modules/preprocessing.html
+Please also refer to the documentation for alternative solver options:
+    https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression
+  n_iter_i = _check_optimize_result(
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>coeff_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>], index<span style="color:#f92672">=</span>X<span style="color:#f92672">.</span>columns, columns<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Coefficient&#34;</span>])
+</span></span><span style="display:flex;"><span>print(coeff_df<span style="color:#f92672">.</span>sort_values(<span style="color:#e6db74">&#34;Coefficient&#34;</span>, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>))
+</span></span></code></pre></div><pre><code>                                   Coefficient
+OverTime_Yes                          0.367823
+PerformanceRating                     0.152581
+Department_Sales                      0.146145
+BusinessTravel_Travel_Frequently      0.128062
+JobRole_Sales Representative          0.095459
+RelationshipSatisfaction              0.092712
+YearsAtCompany                        0.091397
+JobRole_Laboratory Technician         0.068907
+JobRole_Sales Executive               0.048670
+WorkLifeBalance                       0.025411
+DistanceFromHome                      0.025401
+Age                                   0.015799
+JobRole_Human Resources               0.013209
+MonthlyIncome                        -0.000043
+JobRole_Manager                      -0.006343
+BusinessTravel_Travel_Rarely         -0.009459
+JobRole_Research Scientist           -0.019459
+JobRole_Research Director            -0.022910
+JobRole_Manufacturing Director       -0.053768
+TrainingTimesLastYear                -0.084642
+Department_Research &amp; Development    -0.100469
+EnvironmentSatisfaction              -0.105870
+TotalWorkingYears                    -0.124786
+JobSatisfaction                      -0.179750
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> confusion_matrix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cm <span style="color:#f92672">=</span> confusion_matrix(y_test, y_pred)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">4</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(cm, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;d&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Blues&#39;</span>, xticklabels<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;No&#39;</span>, <span style="color:#e6db74">&#39;Yes&#39;</span>], yticklabels<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;No&#39;</span>, <span style="color:#e6db74">&#39;Yes&#39;</span>])
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Predicted&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;Actual&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Confusion Matrix&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_5.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>coefficients <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>coef_[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span>features <span style="color:#f92672">=</span> X<span style="color:#f92672">.</span>columns
+</span></span><span style="display:flex;"><span>coef_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame({<span style="color:#e6db74">&#39;Feature&#39;</span>: features, <span style="color:#e6db74">&#39;Coefficient&#39;</span>: coefficients})
+</span></span><span style="display:flex;"><span>coef_df <span style="color:#f92672">=</span> coef_df<span style="color:#f92672">.</span>sort_values(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Coefficient&#39;</span>, key<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>abs, ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">6</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>barplot(data<span style="color:#f92672">=</span>coef_df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Coefficient&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Feature&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coolwarm&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Logistic Regression Coefficients (Feature Importance)&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><pre><code>/var/folders/sj/6jz7w0pd3vz6kl3h7kwrx37r0000gn/T/ipykernel_71616/1017806495.py:10: FutureWarning:
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(data=coef_df, x='Coefficient', y='Feature', palette='coolwarm')
+</code></pre>
+<p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_6.png"></p>
+<h2 id="visualizations--recommendations">Visualizations &amp; Recommendations<a hidden class="anchor" aria-hidden="true" href="#visualizations--recommendations">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>corr <span style="color:#f92672">=</span> df_model<span style="color:#f92672">.</span>corr()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">30</span>))
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(corr, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coolwarm&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Feature Correlation Heatmap&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_7.png"></p>
+<h2 id="dashboard">Dashboard<a hidden class="anchor" aria-hidden="true" href="#dashboard">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># === Dashboard Layout ===</span>
+</span></span><span style="display:flex;"><span>fig, axes <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">18</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Confusion Matrix</span>
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(cm, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>, fmt<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;d&#39;</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Blues&#39;</span>, ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">0</span>],
+</span></span><span style="display:flex;"><span>            xticklabels<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;No&#39;</span>, <span style="color:#e6db74">&#39;Yes&#39;</span>], yticklabels<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;No&#39;</span>, <span style="color:#e6db74">&#39;Yes&#39;</span>])
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Confusion Matrix&#39;</span>)
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Predicted&#39;</span>)
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;Actual&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Feature Importance</span>
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>barplot(data<span style="color:#f92672">=</span>coef_df, x<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Coefficient&#39;</span>, y<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Feature&#39;</span>, palette<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coolwarm&#39;</span>, ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Feature Importance&#39;</span>)
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;Coefficient&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 3. Correlation Heatmap (shown as image in axes[2])</span>
+</span></span><span style="display:flex;"><span>sns<span style="color:#f92672">.</span>heatmap(corr, annot<span style="color:#f92672">=</span><span style="color:#66d9ef">False</span>, cmap<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;coolwarm&#39;</span>, ax<span style="color:#f92672">=</span>axes[<span style="color:#ae81ff">2</span>], cbar<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>axes[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Feature Correlation Heatmap&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><pre><code>/var/folders/sj/6jz7w0pd3vz6kl3h7kwrx37r0000gn/T/ipykernel_71616/1014875411.py:12: FutureWarning:
+
+Passing `palette` without assigning `hue` is deprecated and will be removed in v0.14.0. Assign the `y` variable to `hue` and set `legend=False` for the same effect.
+
+  sns.barplot(data=coef_df, x='Coefficient', y='Feature', palette='coolwarm', ax=axes[1])
+</code></pre>
+<p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_8.png"></p>
+<h2 id="random-forest">Random Forest<a hidden class="anchor" aria-hidden="true" href="#random-forest">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.ensemble <span style="color:#f92672">import</span> RandomForestClassifier
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> sklearn.metrics <span style="color:#f92672">import</span> classification_report, confusion_matrix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create and train the model</span>
+</span></span><span style="display:flex;"><span>rf_model <span style="color:#f92672">=</span> RandomForestClassifier(n_estimators<span style="color:#f92672">=</span><span style="color:#ae81ff">100</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">42</span>, class_weight<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;balanced&#39;</span>)
+</span></span><span style="display:flex;"><span>rf_model<span style="color:#f92672">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Predict on test set</span>
+</span></span><span style="display:flex;"><span>y_pred_rf <span style="color:#f92672">=</span> rf_model<span style="color:#f92672">.</span>predict(X_test)
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Confusion matrix</span>
+</span></span><span style="display:flex;"><span>cm_rf <span style="color:#f92672">=</span> confusion_matrix(y_test, y_pred_rf)
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Confusion Matrix:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(cm_rf)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Classification report</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Classification Report:&#34;</span>)
+</span></span><span style="display:flex;"><span>print(classification_report(y_test, y_pred_rf))
+</span></span></code></pre></div><pre><code>Confusion Matrix:
+[[252   3]
+ [ 38   1]]
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.87      0.99      0.92       255
+           1       0.25      0.03      0.05        39
+
+    accuracy                           0.86       294
+   macro avg       0.56      0.51      0.49       294
+weighted avg       0.79      0.86      0.81       294
+</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#66d9ef">as</span> plt
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> seaborn <span style="color:#66d9ef">as</span> sns
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Get feature importances and sort</span>
+</span></span><span style="display:flex;"><span>feat_importances <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>Series(rf_model<span style="color:#f92672">.</span>feature_importances_, index<span style="color:#f92672">=</span>X<span style="color:#f92672">.</span>columns)
+</span></span><span style="display:flex;"><span>feat_importances <span style="color:#f92672">=</span> feat_importances<span style="color:#f92672">.</span>sort_values(ascending<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Plot</span>
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>figure(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">8</span>))
+</span></span><span style="display:flex;"><span>feat_importances<span style="color:#f92672">.</span>plot(kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;barh&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;skyblue&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>title(<span style="color:#e6db74">&#39;Random Forest Feature Importances&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;Importance&#39;</span>)
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>tight_layout()
+</span></span><span style="display:flex;"><span>plt<span style="color:#f92672">.</span>show()
+</span></span></code></pre></div><p><img alt="png" loading="lazy" src="/images/hr-attrition-analysis/output_9.png"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>y_probs_rf <span style="color:#f92672">=</span> rf_model<span style="color:#f92672">.</span>predict_proba(X_test)[:, <span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>threshold <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.2</span>  <span style="color:#75715e"># try lowering from 0.5</span>
+</span></span><span style="display:flex;"><span>y_pred_adj <span style="color:#f92672">=</span> (y_probs_rf <span style="color:#f92672">&gt;=</span> threshold)<span style="color:#f92672">.</span>astype(int)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(confusion_matrix(y_test, y_pred_adj))
+</span></span><span style="display:flex;"><span>print(classification_report(y_test, y_pred_adj))
+</span></span></code></pre></div><pre><code>[[207  48]
+ [ 16  23]]
+              precision    recall  f1-score   support
+
+           0       0.93      0.81      0.87       255
+           1       0.32      0.59      0.42        39
+
+    accuracy                           0.78       294
+   macro avg       0.63      0.70      0.64       294
+weighted avg       0.85      0.78      0.81       294
+</code></pre>
+<h2 id="model-comparision">Model Comparision<a hidden class="anchor" aria-hidden="true" href="#model-comparision">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Logistic Regression</th>
+          <th>Random Forest (Tuned Threshold)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Accuracy</strong></td>
+          <td>67%</td>
+          <td>78%</td>
+      </tr>
+      <tr>
+          <td><strong>Recall (attrition)</strong></td>
+          <td>69% (better at catching leavers)</td>
+          <td>59% (slightly lower recall)</td>
+      </tr>
+      <tr>
+          <td><strong>Precision (attrition)</strong></td>
+          <td>24% (more false alarms)</td>
+          <td>32% (fewer false alarms)</td>
+      </tr>
+      <tr>
+          <td><strong>Overall balance</strong></td>
+          <td>Less balanced, lower accuracy</td>
+          <td>Better balance, higher accuracy</td>
+      </tr>
+      <tr>
+          <td><strong>F1-score (attrition)</strong></td>
+          <td>0.36</td>
+          <td>0.42</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="which-is-better">Which is better?<a hidden class="anchor" aria-hidden="true" href="#which-is-better">#</a></h4>
+<p>Random Forest with threshold adjustment shows better overall accuracy and better precision for the attrition class, with only a modest decrease in recall.</p>
+<p>It has a higher F1-score for attrition (0.42 vs 0.36), meaning better balance between precision and recall.</p>
+<p>Random Forest usually captures more complex patterns, which can improve generalization.</p>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>I conducted an exploratory data analysis (EDA) on an HR dataset to uncover patterns in employee attrition and identify key factors influencing turnover. Using Python, Pandas, and Seaborn, I analyzed the dataset to derive actionable insights and built a logistic regression model to predict attrition likelihood. The project culminated in data-driven recommendations to reduce turnover in high-risk departments.</p>
+<h3 id="key-findings">Key Findings<a hidden class="anchor" aria-hidden="true" href="#key-findings">#</a></h3>
+<h4 id="1-attrition-rate">1. Attrition Rate<a hidden class="anchor" aria-hidden="true" href="#1-attrition-rate">#</a></h4>
+<p>The overall attrition rate in the dataset was 16.12%, with 83.88% of employees retaining their positions.</p>
+<p>Visualizations revealed that Sales and Research &amp; Development departments had the highest attrition rates, suggesting a need for targeted retention strategies.</p>
+<h4 id="2-department--job-role-impact">2. Department &amp; Job Role Impact<a hidden class="anchor" aria-hidden="true" href="#2-department--job-role-impact">#</a></h4>
+<p>Sales and R&amp;D showed the highest attrition, while Human Resources had the lowest.</p>
+<p>Within job roles, Sales Representatives and Laboratory Technicians were most likely to leave, whereas Managers and Research Directors had higher retention.</p>
+<h4 id="3-satisfaction--work-life-balance">3. Satisfaction &amp; Work-Life Balance<a hidden class="anchor" aria-hidden="true" href="#3-satisfaction--work-life-balance">#</a></h4>
+<p>Employees with lower Job Satisfaction and Work-Life Balance scores were more prone to attrition.</p>
+<p>Overtime was a significant factor—employees working overtime had a higher likelihood of leaving.</p>
+<h4 id="4-predictive-modeling">4. Predictive Modeling<a hidden class="anchor" aria-hidden="true" href="#4-predictive-modeling">#</a></h4>
+<p>A logistic regression model was developed to predict attrition based on:</p>
+<p>Department</p>
+<p>Job Role</p>
+<p>Job Satisfaction</p>
+<p>Work-Life Balance</p>
+<p>Overtime Status</p>
+<p>The model helped identify at-risk employees, enabling proactive HR interventions.</p>
+<h3 id="recommendations">Recommendations<a hidden class="anchor" aria-hidden="true" href="#recommendations">#</a></h3>
+<p><strong>Enhance Employee Engagement</strong>: Implement mentorship programs and career development opportunities in high-attrition departments.</p>
+<p><strong>Improve Work-Life Balance</strong>: Reduce overtime demands and offer flexible work arrangements.</p>
+<p><strong>Targeted Retention Strategies</strong>: Focus on Sales and R&amp;D teams with incentives, recognition programs, and satisfaction surveys.</p>
+<p><strong>Predictive HR Analytics</strong>: Use the logistic regression model to flag at-risk employees for early intervention.</p>
+<h3 id="tools--techniques">Tools &amp; Techniques<a hidden class="anchor" aria-hidden="true" href="#tools--techniques">#</a></h3>
+<p>Python (Pandas, Seaborn, Matplotlib) – Data cleaning, visualization, and statistical analysis.</p>
+<p>Logistic Regression – Predictive modeling for attrition likelihood.</p>
+<p>Excel – Supplemental data validation and reporting.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/pandas/">Pandas</a></li>
+      <li><a href="http://localhost:1313/tags/jupyter/">Jupyter</a></li>
+      <li><a href="http://localhost:1313/tags/logistic-regression/">Logistic Regression</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Mili&#39;s Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
