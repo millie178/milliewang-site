@@ -2,6 +2,7 @@
 title: "Data Analytics Podcasts I Listen To"
 date: 2025-07-13
 draft: false
+summary: "Here’s a collection of data analytics podcasts I enjoy — for learning, relaxing, or just staying inspired."
 tags: ["podcasts", "favorites", "media"]
 ---
 
