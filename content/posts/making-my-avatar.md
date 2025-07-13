@@ -1,7 +1,7 @@
 ---
 date: "2025-07-13T11:45:10-05:00"
 draft: false
-title: "Making My Avatar"
+title: "🎨 Making My Avatar"
 summary: "Interesting and cute avatar maker: Notion Avatar Maker!"
 ---
 
