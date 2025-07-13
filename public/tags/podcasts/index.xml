@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Podcasts on Mili&#39;s Site</title>
+    <link>http://localhost:1313/tags/podcasts/</link>
+    <description>Recent content in Podcasts on Mili&#39;s Site</description>
+    <generator>Hugo -- 0.147.9</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/podcasts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Data Analytics Podcasts I Listen To</title>
+      <link>http://localhost:1313/posts/favorite-podcasts/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/favorite-podcasts/</guid>
+      <description>&lt;h2 id=&#34;-podcasts-i-love&#34;&gt;🎧 Podcasts I Love&lt;/h2&gt;
+&lt;p&gt;Here’s a collection of data analytics podcasts I enjoy — for learning, relaxing, or just staying inspired.&lt;/p&gt;
+&lt;h3 id=&#34;-tech--learning&#34;&gt;💡 Tech &amp;amp; Learning&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Analytics Power Hour&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Length: mostly about 1 hour&lt;/li&gt;
+&lt;li&gt;Topic: covers a wide range of topics. For example:&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Super Data Science Podcast&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-personal-growth--fun&#34;&gt;🧘 Personal Growth &amp;amp; Fun&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Hidden Brain&lt;/strong&gt; — Psychology + behavioral science, beautifully produced.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;-how-i-listen&#34;&gt;📱 How I Listen&lt;/h3&gt;
+&lt;p&gt;I mostly use &lt;a href=&#34;https://www.pocketcasts.com/&#34;&gt;Pocket Casts&lt;/a&gt; and sometimes Spotify when I want to queue things up easily.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -23,6 +23,27 @@
       <description></description>
     </item>
     <item>
+      <title>Favorites</title>
+      <link>http://localhost:1313/tags/favorites/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/favorites/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media</title>
+      <link>http://localhost:1313/tags/media/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/media/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Podcasts</title>
+      <link>http://localhost:1313/tags/podcasts/</link>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/podcasts/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>SQL</title>
       <link>http://localhost:1313/tags/sql/</link>
       <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
