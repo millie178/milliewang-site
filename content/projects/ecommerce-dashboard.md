@@ -1,14 +1,14 @@
 ---
-title: "E-commerce Sales Dashboard"
+title: "🛒 E-commerce Sales Dashboard"
 date: 2025-07-03
 draft: false
 summary: "An interactive sales dashboard built in Tableau using Superstore data, with supporting analysis."
 tags: ["Tableau", "Excel", "SQL", "Dashboard"]
 ---
 
-## 🛒 Overview
+## Overview
 
-This project involved creating a dynamic **E-commerce Sales Dashboard** using Tableau and Excel, leveraging Superstore sales data.  
+This project involved creating a dynamic **E-commerce Sales Dashboard** using Tableau and Excel, leveraging [Superstore sales data](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting).  
 The dashboard tracks KPIs such as **sales**, **profit**, and **region performance**.
 
 ## 📊 Key Features
@@ -31,4 +31,4 @@ The dashboard tracks KPIs such as **sales**, **profit**, and **region performanc
 
 ## 🔍 Dataset
 
-Superstore sales data (public domain)
+[Superstore sales data](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting)
