@@ -7,7 +7,7 @@ draft: false
 Hi, I'm **Millie Wang** 👋
 
 I'm a recent graduate with a B.A. in **Computer Science** and **Religion** from Luther College.  
-I’m passionate about the intersection of technology, language, and human meaning.
+I’m passionate about the intersection of technology, data, language, and human meaning.
 
 ### ✨ Interests
 
@@ -15,16 +15,6 @@ I’m passionate about the intersection of technology, language, and human meani
 - Human-centered computing
 - Ethics and spirituality in tech
 - Creative coding projects
-
-### 🌱 Currently
-
-Looking for entry-level opportunities where I can contribute my skills in data, code, and communication — especially in fields like:
-
-- Higher education
-- Nonprofits
-- Research
-- Healthcare
-- Asia-connected companies
 
 ### 📫 Contact
 
