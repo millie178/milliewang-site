@@ -2,11 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:51302/tags/data-engineering/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/tags/databricks/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/projects/databricks-etl-pipeline/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/tags/delta-lake/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/tags/etl/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>http://localhost:51302/</loc>
-    <lastmod>2026-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:51302/projects/</loc>
-    <lastmod>2026-09-21T00:00:00+00:00</lastmod>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/tags/spark/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:51302/tags/</loc>
+    <lastmod>2025-09-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:51302/posts/making-my-avatar/</loc>
     <lastmod>2025-07-13T11:45:10-05:00</lastmod>
@@ -24,9 +45,6 @@
     <lastmod>2025-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:51302/tags/podcasts/</loc>
-    <lastmod>2025-07-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>http://localhost:51302/tags/</loc>
     <lastmod>2025-07-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://localhost:51302/post/</loc>
