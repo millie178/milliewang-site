@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Mili&#39;s Site</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Favorites</title>
+      <link>http://localhost:1313/tags/favorites/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/favorites/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Media</title>
+      <link>http://localhost:1313/tags/media/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/media/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Podcasts</title>
+      <link>http://localhost:1313/tags/podcasts/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/podcasts/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Dashboard</title>
       <link>http://localhost:1313/tags/dashboard/</link>
@@ -20,27 +41,6 @@
       <link>http://localhost:1313/tags/excel/</link>
       <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/excel/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Favorites</title>
-      <link>http://localhost:1313/tags/favorites/</link>
-      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/favorites/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Media</title>
-      <link>http://localhost:1313/tags/media/</link>
-      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/media/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Podcasts</title>
-      <link>http://localhost:1313/tags/podcasts/</link>
-      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/podcasts/</guid>
       <description></description>
     </item>
     <item>
