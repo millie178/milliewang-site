@@ -43,9 +43,9 @@ Built an end-to-end ETL pipeline in **Databricks** using the **Medallion archite
 
 ## Challenges & solutions
 
-- **Issue**: Mixed event types & null categories  
+- **Issue**: Mixed event types & null categories\  
   **Fix**: Enforced data types + filtered invalid values
-- **Issue**: Duplicated labels in product categories
+- **Issue**: Duplicated labels in product categories\
   **Fix**: Split strings and standardized category labels
 
 ## Links
