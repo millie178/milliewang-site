@@ -1,6 +1,6 @@
 baseURL: https://millie-wang-site.netlify.app/
 languageCode: en-us
-title: Millie's Site
+title: Shulei's Site
 theme: "PaperMod"
 mainSections: []
 
@@ -22,7 +22,7 @@ menu:
 
 params:
   homeInfoParams:
-    Title: "Hi, I'm Millie Wang 👋"
+    Title: "Hi, I'm Shulei Wang 👋"
     Content: |
       <img src="/avatar.png" alt="Millie Avatar" 
       style="border-radius: 50%; 

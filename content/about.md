@@ -4,7 +4,7 @@ date: 2025-07-02
 draft: false
 ---
 
-Hi, I'm **Millie Wang** 👋
+Hi, I'm **Shulei Wang** 👋
 
 I'm a recent graduate with a B.A. in **Computer Science** and **Religion** from Luther College.  
 I’m passionate about the intersection of technology, data, language, and human meaning.

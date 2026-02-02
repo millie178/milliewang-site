@@ -1,54 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Millie&#39;s Site</title>
-    <link>http://localhost:51302/</link>
-    <description>Recent content on Millie&#39;s Site</description>
+    <title>Shulei&#39;s Site</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Shulei&#39;s Site</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 21 Sep 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:51302/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Databricks ETL Pipeline (Medallion &#43; Delta Lake)</title>
-      <link>http://localhost:51302/projects/databricks-etl-pipeline/</link>
+      <link>http://localhost:1313/projects/databricks-etl-pipeline/</link>
       <pubDate>Sun, 21 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/projects/databricks-etl-pipeline/</guid>
+      <guid>http://localhost:1313/projects/databricks-etl-pipeline/</guid>
       <description>Built an end-to-end ETL pipeline in Databricks using Bronze/Silver/Gold Delta tables, scheduled Jobs, and KPI dashboarding.</description>
     </item>
     <item>
       <title>🎨 Making My Avatar</title>
-      <link>http://localhost:51302/posts/making-my-avatar/</link>
+      <link>http://localhost:1313/posts/making-my-avatar/</link>
       <pubDate>Sun, 13 Jul 2025 11:45:10 -0500</pubDate>
-      <guid>http://localhost:51302/posts/making-my-avatar/</guid>
+      <guid>http://localhost:1313/posts/making-my-avatar/</guid>
       <description>Interesting and cute avatar maker: Notion Avatar Maker!</description>
     </item>
     <item>
       <title>🎧 Data Analytics Podcasts I Listen To</title>
-      <link>http://localhost:51302/posts/favorite-podcasts/</link>
+      <link>http://localhost:1313/posts/favorite-podcasts/</link>
       <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/posts/favorite-podcasts/</guid>
+      <guid>http://localhost:1313/posts/favorite-podcasts/</guid>
       <description>Here’s a collection of data analytics podcasts I enjoy — for learning, relaxing, or just staying inspired.</description>
     </item>
     <item>
       <title>Post</title>
-      <link>http://localhost:51302/post/</link>
+      <link>http://localhost:1313/post/</link>
       <pubDate>Wed, 02 Jul 2025 19:33:41 -0500</pubDate>
-      <guid>http://localhost:51302/post/</guid>
+      <guid>http://localhost:1313/post/</guid>
       <description></description>
     </item>
     <item>
       <title>🛒 E-commerce Sales Dashboard</title>
-      <link>http://localhost:51302/projects/ecommerce-dashboard/</link>
+      <link>http://localhost:1313/projects/ecommerce-dashboard/</link>
       <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/projects/ecommerce-dashboard/</guid>
+      <guid>http://localhost:1313/projects/ecommerce-dashboard/</guid>
       <description>An interactive sales dashboard built in Tableau using Superstore data, with supporting analysis.</description>
     </item>
     <item>
       <title>About</title>
-      <link>http://localhost:51302/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/about/</guid>
-      <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Millie Wang&lt;/strong&gt; 👋&lt;/p&gt;
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Shulei Wang&lt;/strong&gt; 👋&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m a recent graduate with a B.A. in &lt;strong&gt;Computer Science&lt;/strong&gt; and &lt;strong&gt;Religion&lt;/strong&gt; from Luther College.&lt;br&gt;
 I’m passionate about the intersection of technology, data, language, and human meaning.&lt;/p&gt;
 &lt;h3 id=&#34;-interests&#34;&gt;✨ Interests&lt;/h3&gt;
@@ -67,17 +67,17 @@ I’m passionate about the intersection of technology, data, language, and human
     </item>
     <item>
       <title>HR Attrition Analysis</title>
-      <link>http://localhost:51302/projects/hr-attrition-analysis/</link>
+      <link>http://localhost:1313/projects/hr-attrition-analysis/</link>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/projects/hr-attrition-analysis/</guid>
+      <guid>http://localhost:1313/projects/hr-attrition-analysis/</guid>
       <description>Analysis of employee attrition using Python and logistic regression.</description>
     </item>
     <item>
       <title>Resume</title>
-      <link>http://localhost:51302/resume/</link>
+      <link>http://localhost:1313/resume/</link>
       <pubDate>Wed, 02 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:51302/resume/</guid>
-      <description>&lt;iframe src=&#34;http://localhost:51302/Shulei_Wang_Resume.pdf&#34;
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;iframe src=&#34;http://localhost:1313/Shulei_Wang_Resume.pdf&#34;
         width=&#34;100%&#34;
         height=&#34;800px&#34;
         style=&#34;border: none;&#34;&gt;
