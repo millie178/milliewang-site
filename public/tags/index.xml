@@ -6,8 +6,36 @@
     <description>Recent content in Tags on Shulei&#39;s Site</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Business</title>
+      <link>http://localhost:1313/tags/business/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/business/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Logistics</title>
+      <link>http://localhost:1313/tags/logistics/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/logistics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Podcasts</title>
+      <link>http://localhost:1313/tags/podcasts/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/podcasts/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Supply Chain</title>
+      <link>http://localhost:1313/tags/supply-chain/</link>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/supply-chain/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Data Engineering</title>
       <link>http://localhost:1313/tags/data-engineering/</link>
@@ -55,13 +83,6 @@
       <link>http://localhost:1313/tags/media/</link>
       <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/media/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Podcasts</title>
-      <link>http://localhost:1313/tags/podcasts/</link>
-      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/podcasts/</guid>
       <description></description>
     </item>
     <item>

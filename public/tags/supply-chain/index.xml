@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Podcasts on Shulei&#39;s Site</title>
-    <link>http://localhost:1313/tags/podcasts/</link>
-    <description>Recent content in Podcasts on Shulei&#39;s Site</description>
+    <title>Supply Chain on Shulei&#39;s Site</title>
+    <link>http://localhost:1313/tags/supply-chain/</link>
+    <description>Recent content in Supply Chain on Shulei&#39;s Site</description>
     <generator>Hugo -- 0.147.9</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/podcasts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/supply-chain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🚚 Supply Chain &amp; Business Podcasts Worth Your Time</title>
       <link>http://localhost:1313/posts/supply-chain-podcast/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/supply-chain-podcast/</guid>
       <description>A few podcasts I&amp;rsquo;ve been exploring to better understand supply chain, logistics, and the business of moving goods around the world.</description>
-    </item>
-    <item>
-      <title>🎧 Data Analytics Podcasts I Listen To</title>
-      <link>http://localhost:1313/posts/favorite-podcasts/</link>
-      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/favorite-podcasts/</guid>
-      <description>Here’s a collection of data analytics podcasts I enjoy — for learning, relaxing, or just staying inspired.</description>
     </item>
   </channel>
 </rss>
