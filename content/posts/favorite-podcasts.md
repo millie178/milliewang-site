@@ -19,7 +19,7 @@ Here are two data analytics podcasts I enjoy, whether for learning, relaxing, or
 **Hosts:** Tim Wilson, Moe Kiss, and others
 
 **Why I like it:**  
-This podcast feels like sitting in on a smart, funny, and honest conversation between analytics professionals who actually _do the work_. They talk about the messy, human side of analytics — not just tools and dashboards, but things like stakeholder relationships, imposter syndrome, and how to build a good team.
+This podcast feels like sitting in on a smart, funny, and honest conversation between analytics professionals who actually _do the work_. They talk about the messy, human side of analytics. Not just tools and dashboards, but things like stakeholder relationships, imposter syndrome, and how to build a good team.
 
 **Who it's for:**  
 Analytics practitioners who care about how their work fits into larger business and human contexts. Especially valuable if you're in digital analytics, product analytics, or consulting.
@@ -39,7 +39,7 @@ Analytics practitioners who care about how their work fits into larger business 
 **Hosts:** Jon Krohn
 
 **Why I like it:**  
-This podcast is more structured and technical than Analytics Power Hour. I like listening to talks with data scientists from all sorts of backgrounds — academia, startups, big tech — and hearing how they approach projects, learn new skills, or pivot careers.
+This podcast is more structured and technical than Analytics Power Hour. I like listening to talks with data scientists from all sorts of backgrounds, academia, startups, big tech, and hearing how they approach projects, learn new skills, or pivot careers.
 
 **Who it's for:**  
 Anyone studying or working in data science or machine learning. Great for students, job switchers, or professionals who want to hear how others build careers in data.

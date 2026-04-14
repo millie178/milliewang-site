@@ -9,7 +9,7 @@
     <lastBuildDate>Mon, 13 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>🚚 Supply Chain &amp; Business Podcasts Worth Your Time</title>
+      <title>🚛 Supply Chain &amp; Business Podcasts Worth Your Time</title>
       <link>http://localhost:1313/posts/supply-chain-podcast/</link>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/supply-chain-podcast/</guid>
@@ -23,7 +23,7 @@
       <description>Built an end-to-end ETL pipeline in Databricks using Bronze/Silver/Gold Delta tables, scheduled Jobs, and KPI dashboarding.</description>
     </item>
     <item>
-      <title>🎨 Making My Avatar</title>
+      <title>🌸 Making My Avatar</title>
       <link>http://localhost:1313/posts/making-my-avatar/</link>
       <pubDate>Sun, 13 Jul 2025 11:45:10 -0500</pubDate>
       <guid>http://localhost:1313/posts/making-my-avatar/</guid>
@@ -57,15 +57,14 @@
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;Hi, I&amp;rsquo;m &lt;strong&gt;Shulei Wang&lt;/strong&gt; 👋&lt;/p&gt;
 &lt;p&gt;I&amp;rsquo;m a recent graduate with a B.A. in &lt;strong&gt;Computer Science&lt;/strong&gt; and &lt;strong&gt;Religion&lt;/strong&gt; from Luther College.&lt;br&gt;
-I’m passionate about the intersection of technology, data, language, and human meaning.&lt;/p&gt;
+I’m passionate about the intersection between technology, business, data and languages.&lt;/p&gt;
 &lt;h3 id=&#34;-interests&#34;&gt;✨ Interests&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Data analysis and visualization&lt;/li&gt;
-&lt;li&gt;Human-centered computing&lt;/li&gt;
+&lt;li&gt;Business analysis and visualization&lt;/li&gt;
+&lt;li&gt;Supply chain and logistics&lt;/li&gt;
 &lt;li&gt;Ethics and spirituality in tech&lt;/li&gt;
-&lt;li&gt;Creative coding projects&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;-contact&#34;&gt;📫 Contact&lt;/h3&gt;
+&lt;h3 id=&#34;-contact&#34;&gt;📩 Contact&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/millie178&#34;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/in/shulei-wang/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;

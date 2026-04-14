@@ -1,11 +1,11 @@
 ---
 date: "2025-07-13T11:45:10-05:00"
 draft: false
-title: "🎨 Making My Avatar"
+title: "🌸 Making My Avatar"
 summary: "Interesting and cute avatar maker: Notion Avatar Maker!"
 ---
 
-## 🎨 How I Created the Avatar on My Homepage
+## How I Created the Avatar on My Homepage
 
 If you’re wondering where my little character came from — I made it using the free and super fun tool called [Notion Avatar Maker](https://notion-avatar.app/en)!
 
